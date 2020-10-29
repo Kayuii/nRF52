@@ -259,6 +259,11 @@
 #define NRFX_UARTE0_ENABLED 0
 #endif
 
+// <o> NRFX_UARTE1_ENABLED - Enable UARTE1 instance 
+#ifndef NRFX_UARTE1_ENABLED
+#define NRFX_UARTE1_ENABLED 0
+#endif
+
 // <o> NRFX_UARTE_DEFAULT_CONFIG_HWFC  - Hardware Flow Control
  
 // <0=> Disabled 
@@ -580,6 +585,13 @@
 #define UART0_CONFIG_USE_EASY_DMA 1
 #endif
 
+// </e>
+
+// <e> UART1_ENABLED - Enable UART1 instance
+//==========================================================
+#ifndef UART1_ENABLED
+#define UART1_ENABLED 0
+#endif
 // </e>
 
 // </e>

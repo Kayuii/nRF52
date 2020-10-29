@@ -13,22 +13,22 @@
       arm_linker_stack_size="8192"
       arm_linker_treat_warnings_as_errors="No"
       arm_simulator_memory_simulation_parameter="RWX 00000000,00100000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
-      arm_target_device_name="nRF52832_xxAA"
+      arm_target_device_name="nRF52840_xxAA"
       arm_target_interface_type="SWD"
       c_user_include_directories="$(SDK)/config;$(SDK)/components;$(SDK)/components/boards;$(SDK)/components/drivers_nrf/nrf_soc_nosd;$(SDK)/components/libraries/atomic;$(SDK)/components/libraries/balloc;$(SDK)/components/libraries/bsp;$(SDK)/components/libraries/button;$(SDK)/components/libraries/delay;$(SDK)/components/libraries/experimental_section_vars;$(SDK)/components/libraries/fifo;$(SDK)/components/libraries/log;$(SDK)/components/libraries/log/src;$(SDK)/components/libraries/memobj;$(SDK)/components/libraries/ringbuf;$(SDK)/components/libraries/scheduler;$(SDK)/components/libraries/strerror;$(SDK)/components/libraries/timer;$(SDK)/components/libraries/uart;$(SDK)/components/libraries/util;$(SDK)/components/toolchain/cmsis/include;../../..;$(SDK)/external/fprintf;$(SDK)/external/segger_rtt;$(SDK)/integration/nrfx;$(SDK)/integration/nrfx/legacy;$(SDK)/modules/nrfx;$(SDK)/modules/nrfx/drivers/include;$(SDK)/modules/nrfx/hal;$(SDK)/modules/nrfx/mdk;Code/config;"
-      c_preprocessor_definitions="BOARD_PCA10040;BSP_UART_SUPPORT;BSP_DEFINES_ONLY;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52;NRF52832_XXAA;NRF52_PAN_74;SWI_DISABLE0;"
+      c_preprocessor_definitions="BOARD_PCA10056;BSP_UART_SUPPORT;CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52840_XXAA;SWI_DISABLE0;"
       debug_target_connection="J-Link"
       gcc_entry_point="Reset_Handler"
-      macros="CMSIS_CONFIG_TOOL=E:/nRF52832/SDK/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar"
-      debug_register_definition_file="$(SDK)/modules/nrfx/mdk/nrf52.svd"
+      macros="SDK=/Users/gecko/ARMSDK/nRF52/15_3_0;CMSIS_CONFIG_TOOL=$(SDK)/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar"
+      debug_register_definition_file="$(SDK)/modules/nrfx/mdk/nrf52840.svd"
       debug_start_from_entry_point_symbol="No"
       gcc_debugging_level="Level 3"      linker_output_format="hex"
       linker_printf_width_precision_supported="Yes"
       linker_printf_fmt_level="long"
       linker_scanf_fmt_level="long"
       linker_section_placement_file="flash_placement.xml"
-      linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x80000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x10000;FLASH_START=0x0;FLASH_SIZE=0x80000;RAM_START=0x20000000;RAM_SIZE=0x10000"
-      linker_section_placements_segments="FLASH RX 0x0 0x80000;RAM RWX 0x20000000 0x10000"
+      linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x100000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x40000;FLASH_START=0x0;FLASH_SIZE=0x100000;RAM_START=0x20000000;RAM_SIZE=0x40000"
+      linker_section_placements_segments="FLASH RX 0x0 0x100000;RAM RWX 0x20000000 0x40000"
       project_directory=""
       project_type="Executable" />
       <folder Name="Segger Startup Files">
@@ -44,9 +44,6 @@
     </folder>
     <folder Name="Board Definition">
       <file file_name="$(SDK)/components/boards/boards.c" />
-    </folder>
-    <folder Name="Board Support">
-      <file file_name="$(SDK)/components/libraries/bsp/bsp.c" />
     </folder>
     <folder Name="nRF_Libraries">
       <file file_name="$(SDK)/components/libraries/button/app_button.c" />
@@ -75,7 +72,10 @@
       <file file_name="$(SDK)/modules/nrfx/drivers/src/prs/nrfx_prs.c" />
       <file file_name="$(SDK)/modules/nrfx/drivers/src/nrfx_uart.c" />
       <file file_name="$(SDK)/modules/nrfx/drivers/src/nrfx_uarte.c" />
-
+    </folder>
+    <folder Name="Board Support">
+      <file file_name="$(SDK)/components/libraries/bsp/bsp.c" />
+    </folder>
     <folder Name="Application">
       <file file_name="Code/main.c" />
       <file file_name="Code/config/sdk_config.h" />
@@ -86,9 +86,9 @@
       <file file_name="$(SDK)/external/segger_rtt/SEGGER_RTT_printf.c" />
     </folder>
     <folder Name="None">
-      <file file_name="$(SDK)/modules/nrfx/mdk/ses_startup_nrf52.s" />
+      <file file_name="$(SDK)/modules/nrfx/mdk/ses_startup_nrf52840.s" />
       <file file_name="$(SDK)/modules/nrfx/mdk/ses_startup_nrf_common.s" />
-      <file file_name="$(SDK)/modules/nrfx/mdk/system_nrf52.c" />
+      <file file_name="$(SDK)/modules/nrfx/mdk/system_nrf52840.c" />
     </folder>
   </project>
   <configuration Name="Release"
