@@ -9,6 +9,7 @@
 #include "nrf_gpio.h"
 #include "boards.h"
 #include "nrf_log.h"
+#include "waveshare_epd.h""
 //#define NRF_LOG_MODULE_NAME "GFX_WS"
 
 
@@ -35,8 +36,8 @@
 #define SET_RAM_Y_ADDRESS_COUNTER                   0x4F
 #define TERMINATE_FRAME_READ_WRITE                  0xFF
 
-#define WSEPD_HEIGHT      152
-#define WSEPD_WIDTH       152
+#define WSEPD_HEIGHT      122
+#define WSEPD_WIDTH       250
 
 const unsigned char lut_full_update[] = {
     0x02, 0x02, 0x01, 0x11, 0x12, 0x12, 0x22, 0x22,
@@ -67,7 +68,7 @@ static inline void spi_write(const void * data, size_t size)
 
 static inline void write_command(uint8_t c)
 {
-    nrf_gpio_pin_clear(WSEPD_DC);
+    nrf_gpio_pin_clear(WSEPD_DC_PIN);
     nrf_gpio_pin_clear(WSEPD_SPI_CS);
     spi_write(&c, sizeof(c));
     nrf_gpio_pin_set(WSEPD_SPI_CS);
@@ -75,7 +76,7 @@ static inline void write_command(uint8_t c)
 
 static inline void write_data(uint8_t c)
 {
-    nrf_gpio_pin_set(WSEPD_DC);
+    nrf_gpio_pin_set(WSEPD_DC_PIN);
     nrf_gpio_pin_clear(WSEPD_SPI_CS);
     spi_write(&c, sizeof(c));
     nrf_gpio_pin_set(WSEPD_SPI_CS);
@@ -109,7 +110,7 @@ static void set_addr_window(uint16_t x_0, uint16_t y_0, uint16_t x_1, uint16_t y
 static void wait_until_idle(void)
 {
     NRF_LOG_INFO("epd busy\r\n");
-    while(nrf_gpio_pin_read(WSEPD_BUSY) == 1) {      //LOW: idle, HIGH: busy
+    while(nrf_gpio_pin_read(WSEPD_BUSY_PIN) == 1) {      //LOW: idle, HIGH: busy
         nrf_delay_ms(100);
     }
     NRF_LOG_INFO("epd busy release\r\n");
@@ -127,11 +128,11 @@ static void turn_on_display(void)
 
 static void wsepd_reset(void)
 {
-    nrf_gpio_pin_set(WSEPD_RST);
+    nrf_gpio_pin_set(WSEPD_RST_PIN);
     nrf_delay_ms(200);
-    nrf_gpio_pin_clear(WSEPD_RST);
+    nrf_gpio_pin_clear(WSEPD_RST_PIN);
     nrf_delay_ms(200);
-    nrf_gpio_pin_set(WSEPD_RST);
+    nrf_gpio_pin_set(WSEPD_RST_PIN);
     nrf_delay_ms(200);
 }
 
@@ -168,17 +169,22 @@ static ret_code_t hardware_init(void)
 {
     ret_code_t err_code;
 
-    nrf_gpio_cfg_output(WSEPD_DC);
-    nrf_gpio_cfg_output(WSEPD_RST);
+    nrf_gpio_cfg_output(WSEPD_DC_PIN);
+    nrf_gpio_cfg_output(WSEPD_RST_PIN);
     nrf_gpio_cfg_output(WSEPD_SPI_CS);
 
-    nrf_gpio_cfg_input(WSEPD_BUSY, NRF_GPIO_PIN_NOPULL);
+    nrf_gpio_cfg_input(WSEPD_BUSY_PIN, NRF_GPIO_PIN_NOPULL);
 
     nrf_drv_spi_config_t spi_config = NRF_DRV_SPI_DEFAULT_CONFIG;
 
-    spi_config.sck_pin  = WSEPD_SPI_CLK;
-    spi_config.miso_pin = WSEPD_SPI_MISO;
+    //spi_config.sck_pin  = WSEPD_SPI_CLK;
+    //spi_config.miso_pin = WSEPD_SPI_MISO;
+    //spi_config.mosi_pin = WSEPD_SPI_MOSI;
+
+    spi_config.ss_pin = NRF_DRV_SPI_PIN_NOT_USED;
     spi_config.mosi_pin = WSEPD_SPI_MOSI;
+    spi_config.sck_pin = WSEPD_SPI_CLK;
+    spi_config.frequency = SPIM_FREQUENCY_FREQUENCY_M16;
 
     err_code = nrf_drv_spi_init(&spi, &spi_config, NULL, NULL);
     return err_code;

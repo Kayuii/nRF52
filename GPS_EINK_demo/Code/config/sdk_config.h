@@ -47,54 +47,54 @@
 #include "app_config.h"
 #endif
 
-// Waveshare ePaper Display
-#ifndef WAVESHARE_EPD_ENABLED
-#define WAVESHARE_EPD_ENABLED 1
-#endif
+// // Waveshare ePaper Display
+// #ifndef WAVESHARE_EPD_ENABLED
+// #define WAVESHARE_EPD_ENABLED 1
+// #endif
 
-#if WAVESHARE_EPD_ENABLED
+// #if WAVESHARE_EPD_ENABLED
 
-#ifndef WSEPD_SPI_MOSI
-    #define WSEPD_SPI_MOSI  23
-#endif
+// #ifndef WSEPD_SPI_MOSI
+//     #define WSEPD_SPI_MOSI  23
+// #endif
 
-#ifndef WSEPD_SPI_MISO
-    #define WSEPD_SPI_MISO  24
-#endif
+// #ifndef WSEPD_SPI_MISO
+//     #define WSEPD_SPI_MISO  24
+// #endif
 
-#ifndef WSEPD_SPI_CLK
-    #define WSEPD_SPI_CLK   25
-#endif
+// #ifndef WSEPD_SPI_CLK
+//     #define WSEPD_SPI_CLK   25
+// #endif
 
-#ifndef WSEPD_SPI_CS
-    #define WSEPD_SPI_CS    20
-#endif
+// #ifndef WSEPD_SPI_CS
+//     #define WSEPD_SPI_CS    20
+// #endif
 
-#ifndef WSEPD_DC_PIN
-    #define WSEPD_DC        18
-#endif
+// #ifndef WSEPD_DC_PIN
+//     #define WSEPD_DC        18
+// #endif
 
-#ifndef WSEPD_RST_PIN
-    #define WSEPD_RST       19
-#endif
+// #ifndef WSEPD_RST_PIN
+//     #define WSEPD_RST       19
+// #endif
 
-#ifndef WSEPD_BUSY_PIN
-    #define WSEPD_BUSY      17
-#endif
+// #ifndef WSEPD_BUSY_PIN
+//     #define WSEPD_BUSY      17
+// #endif
 
-#ifndef WSEPD_WIDTH
-    #define WSEPD_WIDTH     200
-#endif
+// #ifndef WSEPD_WIDTH
+//     #define WSEPD_WIDTH     200
+// #endif
 
-#ifndef WSEPD_HEIGHT
-    #define WSEPD_HEIGHT     200
-#endif
+// #ifndef WSEPD_HEIGHT
+//     #define WSEPD_HEIGHT     200
+// #endif
 
-#ifndef WSEPD_SPI_INSTANCE
-    #define WSEPD_SPI_INSTANCE  0
-#endif
+// #ifndef WSEPD_SPI_INSTANCE
+//     #define WSEPD_SPI_INSTANCE  0
+// #endif
 
-#endif // WAVESHARE_EPD_ENABLED
+// #endif // WAVESHARE_EPD_ENABLED
 
 
 
