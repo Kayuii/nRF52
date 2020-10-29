@@ -17,6 +17,7 @@ _build/
 *.hex
 *.map
 *.srec
+*.jlink
 
 
 ########## PRIVATE KEY  #################
