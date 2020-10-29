@@ -41,17 +41,19 @@
 #define READ_OTP_DATA                               0xA2
 
 
-extern const nrf_gfx_font_desc_t georgia_6ptFontInfo;
+//extern const nrf_gfx_font_desc_t georgia_6ptFontInfo;
 extern const nrf_gfx_font_desc_t orkney_8ptFontInfo;
-extern const nrf_gfx_font_desc_t microsoftYaHei_6ptFontInfo; ;
-extern const nrf_gfx_font_desc_t microsoftYaHei_10ptFontInfo; ;
-static const nrf_gfx_font_desc_t * p_font = &georgia_6ptFontInfo;
+//extern const nrf_gfx_font_desc_t microsoftYaHei_6ptFontInfo; 
+//extern const nrf_gfx_font_desc_t microsoftYaHei_10ptFontInfo; 
+//static const nrf_gfx_font_desc_t * p_font = &georgia_6ptFontInfo;
 static const nrf_gfx_font_desc_t * p_font_8 = &orkney_8ptFontInfo;
-static const nrf_gfx_font_desc_t * p_font_6b = &microsoftYaHei_6ptFontInfo;
-static const nrf_gfx_font_desc_t * p_font_10b = &microsoftYaHei_10ptFontInfo;
+//static const nrf_gfx_font_desc_t * p_font_6b = &microsoftYaHei_6ptFontInfo;
+//static const nrf_gfx_font_desc_t * p_font_10b = &microsoftYaHei_10ptFontInfo;
 
-#define PAPER_PIXEL_WIDTH  200
-#define PAPER_PIXEL_HEIGHT 200
+//#define PAPER_PIXEL_WIDTH  200
+//#define PAPER_PIXEL_HEIGHT 200
+#define PAPER_PIXEL_WIDTH  250
+#define PAPER_PIXEL_HEIGHT 122
 #define TEXT_SMALL 0
 #define TEXT_LARGE 2
 

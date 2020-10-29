@@ -381,6 +381,9 @@ int main(void)
 {
     ret_code_t ret;
 
+    bsp_board_init(BSP_INIT_LEDS);
+    bsp_board_led_on(BSP_BOARD_LED_0);
+
     APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
     NRF_LOG_DEFAULT_BACKENDS_INIT();
     
@@ -395,11 +398,11 @@ int main(void)
     nrf_gfx_screen_fill(&lcd, COLOR_WHITE);
 
     //Horz
-    paper_rect_draw(0,rowHeight*2, screenSize/2, lineWidth, COLOR_BLACK);
-    paper_rect_draw(screenSize/2,rowHeight*2-3, screenSize-screenSize/2, lineWidth, COLOR_BLACK);
-    paper_rect_draw(0, rowHeight*3, screenSize, lineWidth, COLOR_BLACK);
-    paper_rect_draw(0, screenSize - statusBarSize, screenSize, statusBarSize, COLOR_BLACK);
-    paper_rect_draw(0,rowHeight, screenSize/2, lineWidth, COLOR_BLACK);
+    paper_rect_draw(0,rowHeight*2, screenSize/2, lineWidth, COLOR_WHITE);
+    paper_rect_draw(screenSize/2,rowHeight*2-3, screenSize-screenSize/2, lineWidth, COLOR_WHITE);
+    paper_rect_draw(0, rowHeight*3, screenSize, lineWidth, COLOR_WHITE);
+    paper_rect_draw(0, screenSize - statusBarSize, screenSize, statusBarSize, COLOR_WHITE);
+    paper_rect_draw(0,rowHeight, screenSize/2, lineWidth, COLOR_WHITE);
 
 
     //Vertical line

@@ -2,19 +2,37 @@
 
 #include <string.h>
 
+#include "boards.h""
+
 #include "nrf_gpio.h"
 #include "nrf_delay.h"
 #include "nrf_drv_spi.h"
 #include "app_util_platform.h"
 
-#define PAPER_RST_PIN 19
-#define PAPER_DC_PIN  18
-#define PAPER_BUSY_PIN 17
+//#define PAPER_RST_PIN 19
+//#define PAPER_DC_PIN  18
+//#define PAPER_BUSY_PIN 17
 
-#define PAPER_SPI_INSTANCE 0
-#define PAPER_SPI_SS_PIN   20
-#define PAPER_SPI_MOSI_PIN 23
-#define PAPER_SPI_SCK_PIN  25
+//#define PAPER_SPI_INSTANCE 0
+//#define PAPER_SPI_SS_PIN   20
+//#define PAPER_SPI_MOSI_PIN 23
+//#define PAPER_SPI_SCK_PIN  25
+
+//#define EPD_Wxx_MOSI_PIN NRF_GPIO_PIN_MAP(0, 12)
+//#define EPD_Wxx_CLK_PIN NRF_GPIO_PIN_MAP(1, 9)
+//#define EPD_Wxx_CS_PIN NRF_GPIO_PIN_MAP(0, 8)
+//#define EPD_Wxx_DC_PIN NRF_GPIO_PIN_MAP(0, 13)
+//#define EPD_Wxx_RST_PIN NRF_GPIO_PIN_MAP(0, 15)
+//#define EPD_Wxx_BS_PIN NRF_GPIO_PIN_MAP(0, 17)
+
+#define PAPER_RST_PIN       EPD_Wxx_RST_PIN
+#define PAPER_DC_PIN        EPD_Wxx_DC_PIN
+#define PAPER_BUSY_PIN      EPD_Wxx_BS_PIN
+
+#define PAPER_SPI_INSTANCE  0
+#define PAPER_SPI_SS_PIN    EPD_Wxx_CS_PIN
+#define PAPER_SPI_MOSI_PIN  EPD_Wxx_MOSI_PIN
+#define PAPER_SPI_SCK_PIN   EPD_Wxx_CLK_PIN
 
 #define PAPER_BYTE_WIDTH ((PAPER_PIXEL_WIDTH % 8 == 0) ? PAPER_PIXEL_WIDTH / 8 : PAPER_PIXEL_WIDTH / 8 + 1)
 #define PAPER_BYTE_HEIGHT PAPER_PIXEL_HEIGHT
@@ -492,13 +510,13 @@ void  paper_drawBitmapBM(const uint8_t *bitmap, uint16_t x, uint16_t y, uint16_t
 void paper_print(nrf_lcd_t const * p_instance, uint8_t x, uint8_t y, char *text, uint8_t color, uint8_t size){
 
       nrf_gfx_point_t text_start = NRF_GFX_POINT(x,y);
-      if (size == 0)
-          //APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font, true));
-          APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font_6b, true));
-      else if (size == 1)
+      //if (size == 0)
+      //    //APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font, true));
+      //    APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font_6b, true));
+      //else if (size == 1)
       APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font_8, true));
-      else if (size == 2)
-      APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font_10b, true));
+      //else if (size == 2)
+      //APP_ERROR_CHECK(nrf_gfx_print(p_instance, &text_start, color, text, p_font_10b, true));
         
 }
 
