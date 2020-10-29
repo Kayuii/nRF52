@@ -1,0 +1,23 @@
+
+########## Config  #################
+*.log
+*.zip
+
+#Build Directories
+[Dd]ebug/
+[Rr]elease/
+[Oo]utput/
+_build/
+
+#Build Results
+*.o
+*.d
+*.eep
+*.elf
+*.hex
+*.map
+*.srec
+
+
+########## PRIVATE KEY  #################
+privkey.pem
