@@ -8,7 +8,6 @@
 [Rr]elease/
 [Oo]utput/
 _build/
-**/[Oo]utput/
 
 #Build Results
 *.o

@@ -58,9 +58,9 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="575" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Code/main.c" selected="0" top="552" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="77" y="24" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Code/main.c" selected="1" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="99" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../ARMSDK/nRF52/15_3_0/components/libraries/util/app_error_weak.c" selected="0" top="22" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="123" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../ARMSDK/nRF52/15_3_0/modules/nrfx/mdk/system_nrf52840.c" selected="1" top="87" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="116" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../ARMSDK/nRF52/15_3_0/modules/nrfx/mdk/system_nrf52840.c" selected="0" top="87" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="27" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Code/config/sdk_config.h" selected="0" top="4" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../ARMSDK/nRF52/15_3_0/modules/nrfx/mdk/ses_startup_nrf52840.s" selected="0" top="0" codecName="Default"/>
  </Files>
