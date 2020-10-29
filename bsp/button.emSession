@@ -41,9 +41,9 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="9" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Code/main.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="164" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../ARMSDK/nRF52/15_3_0/components/libraries/bsp/bsp.c" selected="1" top="299" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="77" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Code/main.c" selected="1" top="117" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="168" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../../../../ARMSDK/nRF52/15_3_0/components/libraries/bsp/bsp.c" selected="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="21" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="Code/config/sdk_config.h" selected="0" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="button" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="button" fileDialogDefaultFilter="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.hxx" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
